@@ -1,0 +1,341 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+// COLOR TEMPLATE
+$primarycolor: #007bff;
+$darkprimarycolor: #0069d9;
+$secondarycolor: #6c757d;
+$successcolor: #28a745;
+$dangercolor: #dc3545;
+$warningcolor: #ffc107;
+$infocolor: #17a2b8;
+$lightcolor: #f8f9fa;
+$darkcolor: #343a40;
+$whitecolor: #fff;
+$blackcolor: #000;
+
+/*##########
+############
+PRESET CSS
+############
+############
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+a {
+    text-decoration: none;
+    font-weight: 600;
+}
+.btn {
+    padding: 5px 10px;
+    background-color: $primarycolor;
+    color: $whitecolor;
+    border: none;
+    font-weight: 500;
+    &:hover {
+        opacity: 0.8;
+    }
+    a {
+        color: $whitecolor;
+        font-weight: 600;
+    }
+    &-primary {
+        background-color: $primarycolor;
+    }
+    &-dark-primary {
+        background-color: $darkprimarycolor;
+    }
+    &-secondary {
+        background-color: $secondarycolor;
+    }
+    &-success {
+        background-color: $successcolor;
+    }
+    &-danger {
+        background-color: $dangercolor;
+    }
+    &-warning {
+        background-color: $warningcolor;
+    }
+    &-info {
+        background-color: $infocolor;
+    }
+    &-light {
+        background-color: $lightcolor;
+    }
+    &-dark {
+        background-color: $darkcolor;
+    }
+}
+body {
+    background-color: $whitecolor;
+}
+aside {
+    position: fixed;
+    width: 200px;
+    height: 100%;
+    background-color: $lightcolor;
+    overflow: auto;
+}
+#app {
+    margin-left: 200px;
+    padding: 1rem;
+}
+.cursor {
+    cursor: pointer;
+}
+.heading {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: $blackcolor;
+    margin-bottom: 1rem;
+}
+.small-heading {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: $whitecolor;
+    padding: 2px 8px;
+    background-color: $secondarycolor;
+}
+.text-center {
+    text-align: center;
+}
+.form-box {
+    width: 100%;
+    max-width: 1200px;
+}
+.table-box {
+    overflow-x: scroll;
+    height: auto;
+    max-height: calc(100vh - 90px);
+}
+.no-border {
+    border: none;
+    td,
+    th {
+        border: none;
+    }
+}
+$breakpoints: (100, 200, 300, 400, 500, 600, 700, 800, 900, 1000);
+
+@each $bp in $breakpoints {
+    .fb-#{$bp} {
+        flex-basis: #{$bp}px;
+    }
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+.mb-1 {
+    margin-bottom: 1rem;
+}
+
+/*##########
+############
+SIDEBAR CSS
+############
+############
+*/
+.sidenav-link {
+    color: $blackcolor;
+    padding: 2px 1rem;
+    border-left: 4px solid transparent;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    transition: all 0.3s ease;
+    gap: 5px;
+    &:hover {
+        border-left: 4px solid $primarycolor;
+    }
+    &.active {
+        border-left: 4px solid $primarycolor;
+    }
+    .nav-link-img {
+        height: 1rem;
+    }
+}
+
+/*##########
+############
+TABLE CSS
+############
+############
+*/
+table {
+    width: auto;
+    border-collapse: collapse;
+    white-space: nowrap;
+    a {
+        color: $primarycolor;
+        font-weight: 500;
+    }
+    thead {
+        background-color: $secondarycolor;
+        color: $whitecolor;
+        th {
+            font-weight: 500;
+        }
+    }
+    td,
+    th {
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        padding: 2px 10px;
+        text-align: left;
+        font-size: 14px;
+    }
+    td {
+        a {
+            text-decoration: underline;
+        }
+    }
+}
+.quote-table {
+    width: 100%;
+    thead {
+        background-color: $secondarycolor;
+    }
+}
+
+/*##########
+############
+FORM CSS
+############
+############
+*/
+.customer-form,
+.quote-form {
+    border: 2px solid #343a40;
+    border-top: 8px solid #343a40;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    .form-error {
+        color: $dangercolor;
+        font-size: 0.8rem;
+    }
+    .form-header {
+        background-color: $secondarycolor;
+        color: $whitecolor;
+        text-align: center;
+        padding: 2px 0;
+        h1 {
+            font-weight: 600;
+            font-size: 1.5rem;
+        }
+        p {
+            font-size: 0.8rem;
+            font-weight: 500;
+            padding: 4px;
+        }
+    }
+
+    .form-block {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0.5rem;
+        gap: 0.5rem;
+        h2 {
+            width: 100%;
+            font-size: 1rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: $secondarycolor;
+        }
+    }
+    .form-field {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+        flex-grow: 1;
+    }
+    .form-label {
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: rgba(0, 0, 0, 0.7);
+    }
+    select,
+    .form-input {
+        padding: 2px 8px;
+        border: 1px solid rgba(108, 117, 125, 0.8);
+        width: 100%;
+        &:focus {
+            outline: none;
+        }
+        &::placeholder {
+            font-size: 0.7rem;
+            color: #343a4080;
+        }
+    }
+    .form-button {
+        padding: 5px 10px;
+        text-transform: uppercase;
+        background-color: $primarycolor;
+        color: $whitecolor;
+        outline: none;
+        border: none;
+        font-weight: 700;
+        a {
+            color: $whitecolor;
+        }
+        margin-bottom: 1rem;
+    }
+}
+.quote-form {
+    border: 2px solid #565d64;
+    border-top: 8px solid #565d64;
+    .form-header {
+        background-color: $secondarycolor;
+    }
+}
+
+.autocomplete-items {
+    position: absolute;
+    background-color: $whitecolor;
+    border-bottom: none;
+    border-top: none;
+    z-index: 99;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: auto;
+    max-height: 200px;
+    overflow-y: auto;
+    div {
+        border: 1px solid #d4d4d4;
+        border-top: none;
+        padding: 2px 8px;
+        font-size: 0.8rem;
+
+        &:hover {
+            background-color: #e9e9e9;
+        }
+    }
+}
+
+.flash-message-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .flash-message {
+        background-color: $whitecolor;
+        padding: 1rem;
+        border-radius: 5px;
+        p {
+            font-size: 0.8rem;
+        }
+    }
+}
